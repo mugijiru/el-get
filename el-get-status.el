@@ -142,6 +142,8 @@
           (cond
            ((null ps) ;; nothing installed, we should install el-get
             (list (list 'el-get 'status "required")))
+           ((eq ps t)
+            (list (list 'el-get 'status "installed")))
            ;; ps is an alist, no conversion needed
            ((consp (car ps)) ps)
            ;; looks like we might have an old format status list
